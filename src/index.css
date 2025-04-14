@@ -182,7 +182,7 @@ body.dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 15px; /* Reduced padding for normal size */
+  padding: 15px 20px; /* Increased padding for better visibility */
   position: fixed;
   top: 0;
   left: 0;
@@ -190,6 +190,7 @@ body.dark {
   z-index: 1000;
   background: var(--bg-form);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-height: 60px; /* Added minimum height for navbar */
 }
 
 .navbar-title {
@@ -240,7 +241,7 @@ body.dark .navbar-title {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - clamp(50px, 15vw, 60px));
-  padding-top: clamp(50px, 15vw, 60px);
+  padding-top: clamp(70px, 15vw, 80px); /* Increased padding-top to avoid overlap */
   background: var(--bg-content); /* Use CSS variable for theme switching */
   width: 100%;
 }
@@ -325,12 +326,13 @@ body.dark .navbar-title {
   font-size: clamp(1rem, 4vw, 1.2rem);
   text-transform: uppercase;
 }
+
 .content-selector .category-card {
-  background: #A66DD4 !important; /* Forces green on first card */
+  background: #A66DD4 !important; /* Forces purple on first card */
 }
 
 .content-selector .category-card:nth-child(2) {
-  background: #04d3db !important; /* Forces yellow on second card */
+  background: #04d3db !important; /* Forces cyan on second card */
 }
 
 .content-selector .category-card:nth-child(3) {
@@ -338,7 +340,7 @@ body.dark .navbar-title {
 }
 
 .content-selector .category-card:nth-child(4) {
-  background: #20C997!important; /* Forces purple on fourth card */
+  background: #20C997 !important; /* Forces teal on fourth card */
 }
 
 .category-card:hover {
@@ -387,7 +389,7 @@ body.dark .navbar-title {
 .content-feed {
   padding: clamp(15px, 4vw, 20px);
   min-height: calc(100vh - clamp(80px, 20vw, 100px));
-  padding-top: clamp(50px, 15vw, 60px);
+  padding-top: clamp(70px, 15vw, 80px); /* Increased padding-top to avoid overlap */
   position: relative;
   background: var(--bg-content);
 }
@@ -765,7 +767,7 @@ body.dark .navbar-title {
 
 body.dark {
   --bg-form: #2c2c2c;
-  --input-bg: #3c3c3c;
+  --input-bg: #3c3c2c;
   --border-color: #555;
   --text-color: #fff;
   --text-secondary: #bbb;
@@ -861,11 +863,12 @@ body.dark {
   }
 
   .navbar {
-    padding: 6px 12px; /* Further reduced for tablets */
+    padding: 10px 15px; /* Adjusted for tablets */
+    min-height: 50px;
   }
 
   .navbar-title {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(1rem, 3vw, 1.2rem);
   }
 
   .category-carousel {
@@ -919,12 +922,13 @@ body.dark {
   }
 
   .navbar {
-    padding: 5px 10px; /* Further reduced for phones */
-    flex-wrap: wrap;
+    padding: 10px 15px; /* Increased padding for phones */
+    min-height: 60px; /* Ensured minimum height */
+    flex-wrap: nowrap; /* Prevent wrapping */
   }
 
   .navbar-title {
-    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    font-size: clamp(1rem, 5vw, 1.5rem); /* Increased font size for readability */
   }
 
   .profile-img {
