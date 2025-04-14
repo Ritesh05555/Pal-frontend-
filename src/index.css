@@ -241,7 +241,7 @@ body.dark .navbar-title {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - clamp(50px, 15vw, 60px));
-  padding-top: clamp(70px, 15vw, 80px); /* Increased padding-top to avoid overlap */
+  padding-top: clamp(80px, 15vw, 90px); /* Increased padding-top to avoid overlap */
   background: var(--bg-content); /* Use CSS variable for theme switching */
   width: 100%;
 }
@@ -389,7 +389,7 @@ body.dark .navbar-title {
 .content-feed {
   padding: clamp(15px, 4vw, 20px);
   min-height: calc(100vh - clamp(80px, 20vw, 100px));
-  padding-top: clamp(70px, 15vw, 80px); /* Increased padding-top to avoid overlap */
+  padding-top: clamp(80px, 15vw, 90px); /* Increased padding-top to avoid overlap */
   position: relative;
   background: var(--bg-content);
 }
@@ -953,6 +953,11 @@ body.dark {
 
   .content-feed {
     padding: 10px;
+    padding-top: clamp(90px, 20vw, 100px); /* Increased padding-top for phones */
+  }
+
+  .content-selector {
+    padding-top: clamp(90px, 20vw, 100px); /* Increased padding-top for phones */
   }
 
   .content-item {
