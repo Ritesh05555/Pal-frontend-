@@ -843,12 +843,44 @@ body.dark {
 
 @keyframes likeAnimation {
   0% { background-color: var(--bg-form); }
-  50% { background-color: #ff6b6b; }
+  50% { background-color: #ff0000; } /* Changed to pure red for visibility */
   100% { background-color: var(--bg-form); }
 }
 
 .content-item.liked {
-  animation: likeAnimation 1.2s ease-out forwards;
+  animation: likeAnimation 0.6s ease-out forwards; /* Reduced to 0.6s for instant feedback */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 20px);
+  margin-top: 20px;
+  margin-bottom: 60px; /* Ensure space for bottom-plus button */
+}
+
+.pagination-btn {
+  background: #4ecdc4;
+  color: #fff;
+  border: none;
+  padding: clamp(8px, 2.5vw, 10px) clamp(15px, 4vw, 20px);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.pagination-btn:hover {
+  background: #45b7d1;
+  transform: scale(1.05);
+}
+
+.pagination-btn:disabled {
+  background: #a0d3cc;
+  cursor: not-allowed;
 }
 
 /* Media Queries for Tablets */
@@ -897,6 +929,11 @@ body.dark {
 
   .content-image {
     max-height: clamp(60px, 20vw, 80px);
+  }
+
+  .pagination-btn {
+    padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px);
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
   }
 }
 
@@ -1008,5 +1045,10 @@ body.dark {
 
   .enlarged-image {
     max-height: 80vh;
+  }
+
+  .pagination-btn {
+    padding: clamp(5px, 1.5vw, 7px) clamp(8px, 2.5vw, 12px);
+    font-size: clamp(0.7rem, 2.5vw, 0.8rem);
   }
 }
