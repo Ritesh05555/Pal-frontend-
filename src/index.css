@@ -623,6 +623,7 @@ body.dark .navbar-title {
   display: flex;
   justify-content: center;
   background: var(--bg-content);
+  position: relative;
 }
 
 .profile-page.light {
@@ -727,6 +728,30 @@ body.dark .navbar-title {
   border: 1px solid var(--border-color);
   color: var(--text-color);
   font-size: clamp(0.9rem, 4vw, 1rem);
+}
+
+.loading-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loading-message.light {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+.loading-message.dark {
+  background: rgba(44, 44, 44, 0.8);
+  color: #fff;
 }
 
 .toast {
@@ -1050,5 +1075,10 @@ body.dark {
   .pagination-btn {
     padding: clamp(5px, 1.5vw, 7px) clamp(8px, 2.5vw, 12px);
     font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+  }
+
+  .loading-message {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    padding: 15px;
   }
 }
