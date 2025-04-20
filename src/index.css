@@ -179,7 +179,7 @@ body.dark {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the title */
   align-items: center;
   padding: 15px 20px;
   position: fixed;
@@ -196,6 +196,7 @@ body.dark {
   font-size: clamp(1.2rem, 4vw, 1.4rem);
   margin: 0;
   color: #333;
+  text-align: center; /* Ensure text is centered */
 }
 
 body.dark .navbar-title {
@@ -209,6 +210,8 @@ body.dark .navbar-title {
   font-size: clamp(1rem, 3vw, 1.2rem);
   cursor: pointer;
   transition: color 0.3s;
+  position: absolute;
+  left: 20px; /* Position mode button on the left */
 }
 
 .mode-btn:hover {
@@ -220,6 +223,8 @@ body.dark .navbar-title {
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  position: absolute;
+  right: 20px; /* Position profile section on the right */
 }
 
 .profile-img {
@@ -296,6 +301,7 @@ body.dark .navbar-title {
   100% { background-position: 0% 50%; }
 }
 
+/* Default layout for larger screens */
 .category-carousel {
   display: flex;
   justify-content: center;
@@ -309,6 +315,53 @@ body.dark .navbar-title {
   flex-wrap: wrap;
 }
 
+/* Phone-specific layout (max-width: 768px) to match second image */
+@media (max-width: 768px) {
+  .category-carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    overflow-x: hidden;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .category-card {
+    min-width: 100px;
+    height: 120px;
+    background: #A66DD4; /* Default color, overridden by specific styles below */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease-out forwards;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .content-selector .category-card:nth-child(1) {
+    background: #A66DD4 !important;
+  }
+
+  .content-selector .category-card:nth-child(2) {
+    background: #04d3db !important;
+  }
+
+  .content-selector .category-card:nth-child(3) {
+    background: #FF8C42 !important;
+  }
+
+  .content-selector .category-card:nth-child(4) {
+    background: #20C997 !important;
+  }
+}
+
+/* Default category card styles for larger screens */
 .category-card {
   min-width: clamp(120px, 40vw, 180px);
   height: clamp(180px, 50vw, 220px);
