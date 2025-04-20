@@ -9,8 +9,8 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #f5f5f5; /* Default to light mode background */
-  color: #333; /* Default to light mode text color */
+  background: #f5f5f5;
+  color: #333;
 }
 
 body.light {
@@ -80,9 +80,8 @@ body.dark {
   font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
-/* Updated style for invalid credentials message */
 .auth-form .error-alert {
-  color: #ff0000; /* Red color for visibility */
+  color: #ff0000;
   margin-bottom: 10px;
   font-size: clamp(0.8rem, 3vw, 0.9rem);
 }
@@ -194,7 +193,7 @@ body.dark {
 }
 
 .navbar-title {
-  font-size: clamp(1.4rem, 2.3vw, 1.2rem);
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
   margin: 0;
   color: #333;
 }
@@ -207,7 +206,7 @@ body.dark .navbar-title {
   background: none;
   border: none;
   color: var(--text-color);
-  font-size: clamp(1.2rem, 3vw, 1rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -327,7 +326,7 @@ body.dark .navbar-title {
   text-transform: uppercase;
 }
 
-.content-selector .category-card {
+.content-selector .category-card:nth-child(1) {
   background: #A66DD4 !important;
 }
 
@@ -404,6 +403,69 @@ body.dark .navbar-title {
   color: #fff;
 }
 
+.mood-filter {
+  position: relative;
+  margin-bottom: 15px;
+  width: fit-content;
+}
+
+.mood-filter-btn {
+  background: #4ecdc4;
+  color: #fff;
+  border: none;
+  padding: clamp(8px, 2.5vw, 10px) clamp(12px, 3.5vw, 15px);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mood-filter-btn:hover {
+  background: #45b7d1;
+  transform: scale(1.05);
+}
+
+.mood-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-form);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 150px;
+  margin-top: 5px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mood-option {
+  padding: clamp(8px, 2.5vw, 10px);
+  cursor: pointer;
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+
+.mood-option:hover {
+  background: #4ecdc4;
+  color: #fff;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .content-item {
   background: var(--bg-form);
   padding: clamp(10px, 3vw, 15px);
@@ -421,6 +483,16 @@ body.dark .navbar-title {
 .content-item.dark {
   background: #2c2c2c;
   color: #fff;
+}
+
+.content-item.liked {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .content-header {
@@ -460,6 +532,7 @@ body.dark .navbar-title {
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .content-footer {
@@ -690,7 +763,7 @@ body.dark .navbar-title {
 
 .profile-details {
   margin-bottom: 20px;
-  text-align: center; /* Center-align the content */
+  text-align: center;
 }
 
 .profile-details img {
@@ -698,7 +771,7 @@ body.dark .navbar-title {
   height: clamp(80px, 20vw, 100px);
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px; /* Add margin to separate image from button */
+  margin-bottom: 20px;
 }
 
 .profile-details h2 {
@@ -736,7 +809,7 @@ body.dark .navbar-title {
 }
 
 .edit-profile-btn {
-  padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 12px); /* Reduced padding for smaller size */
+  padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 12px);
   background: #4ecdc4;
   color: #fff;
   border: none;
@@ -746,9 +819,9 @@ body.dark .navbar-title {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: clamp(0.8rem, 3vw, 0.9rem); /* Reduced font size */
-  width: clamp(100px, 20vw, 120px); /* Fixed width to control size */
-  margin: 0 auto; /* Center the button */
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  width: clamp(100px, 20vw, 120px);
+  margin: 0 auto;
 }
 
 .edit-profile-btn:hover {
@@ -872,44 +945,26 @@ body.dark .navbar-title {
   color: #fff;
 }
 
-:root {
-  --bg-form: #fff;
-  --input-bg: #fff;
-  --border-color: #ddd;
-  --text-color: #333;
-  --text-secondary: #666;
-  --bg-content: #f5f5f5;
-}
-
-body.dark {
-  --bg-form: #2c2c2c;
-  --input-bg: #3c3c2c;
-  --border-color: #555;
-  --text-color: #fff;
-  --text-secondary: #bbb;
-  --bg-content: #1a1a1a;
-}
-
 .bottom-plus {
   position: fixed;
-  bottom: clamp(15px, 4vw, 20px);
-  right: clamp(15px, 4vw, 20px);
+  bottom: clamp(20px, 5vw, 30px);
+  right: clamp(20px, 5vw, 30px);
+  width: clamp(50px, 15vw, 60px);
+  height: clamp(50px, 15vw, 60px);
   background: #4ecdc4;
   border: none;
   border-radius: 50%;
-  width: clamp(40px, 12vw, 50px);
-  height: clamp(40px, 12vw, 50px);
   color: #fff;
-  font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 1000;
 }
 
 .bottom-plus:hover {
   background: #45b7d1;
+  transform: scale(1.1);
 }
 
 .image-modal-overlay {
@@ -918,252 +973,94 @@ body.dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
-  backdrop-filter: blur(5px);
-  animation: fadeIn 0.3s ease-in;
 }
 
 .image-modal {
   position: relative;
-  max-width: clamp(80%, 90vw, 90%);
-  max-height: clamp(80vh, 90vh, 90vh);
+  max-width: 90%;
+  max-height: 90%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
   animation: slideUp 0.3s ease-out;
 }
 
-.image-modal .close-modal-btn {
+.image-modal.light {
+  background: #fff;
+}
+
+.image-modal.dark {
+  background: #2c2c2c;
+}
+
+.close-modal-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   background: none;
   border: none;
-  color: #fff;
+  color: #ff6b6b;
   font-size: clamp(1.2rem, 4vw, 1.5rem);
   cursor: pointer;
   transition: color 0.3s;
 }
 
-.image-modal .close-modal-btn:hover {
-  color: #ff6b6b;
+.close-modal-btn:hover {
+  color: #ff4757;
 }
 
 .enlarged-image {
   max-width: 100%;
-  max-height: clamp(70vh, 85vh, 90vh);
-  border-radius: 5px;
+  max-height: calc(90vh - 20px);
   object-fit: contain;
-}
-
-@keyframes likeAnimation {
-  0% { background-color: var(--bg-form); }
-  50% { background-color: #ff0000; }
-  100% { background-color: var(--bg-form); }
-}
-
-.content-item.liked {
-  animation: likeAnimation 0.6s ease-out forwards;
+  border-radius: 10px;
 }
 
 .pagination {
   display: flex;
   justify-content: center;
-  gap: clamp(10px, 3vw, 20px);
+  gap: clamp(10px, 3vw, 15px);
   margin-top: 20px;
-  margin-bottom: 60px;
 }
 
 .pagination-btn {
+  padding: clamp(8px, 2.5vw, 10px) clamp(12px, 3.5vw, 15px);
   background: #4ecdc4;
   color: #fff;
   border: none;
-  padding: clamp(8px, 2.5vw, 10px) clamp(15px, 4vw, 20px);
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  transition: background 0.3s, transform 0.2s;
 }
 
 .pagination-btn:hover {
   background: #45b7d1;
+  transform: scale(1.05);
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 10px 15px;
-    min-height: 50px;
-  }
-
-  .navbar-title {
-    font-size: clamp(1.2rem, 3vw, 1.4rem);
-  }
-
-  .mode-btn {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-  }
-
-  .profile-img {
-    width: clamp(25px, 8vw, 30px);
-    height: clamp(25px, 8vw, 30px);
-  }
-
-  .category-card {
-    min-width: clamp(100px, 35vw, 150px);
-    height: clamp(150px, 45vw, 180px);
-  }
-
-  .category-icon {
-    font-size: clamp(1.5rem, 6vw, 2rem);
-  }
-
-  .category-name {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-  }
-
-  .content-item {
-    padding: clamp(8px, 2.5vw, 12px);
-  }
-
-  .content-item h3 {
-    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-  }
-
-  .content-item h4 {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-  }
-
-  .content-image {
-    max-height: clamp(70px, 20vw, 90px);
-  }
-
-  .upload-container-large {
-    width: clamp(250px, 85%, 500px);
-  }
-
-  .profile-screen {
-    width: clamp(250px, 85%, 500px);
-  }
-
-  .profile-details img {
-    width: clamp(70px, 18vw, 90px);
-    height: clamp(70px, 18vw, 90px);
-  }
-
-  .edit-profile-btn {
-    padding: clamp(5px, 1.5vw, 6px) clamp(8px, 2.5vw, 10px);
-    font-size: clamp(0.7rem, 2.5vw, 0.8rem);
-    width: clamp(90px, 18vw, 110px);
-  }
-
-  .profile-update-form .button-group button {
-    padding: clamp(6px, 2vw, 8px);
-    font-size: clamp(0.8rem, 3vw, 0.9rem);
-  }
-
-  .pagination-btn {
-    padding: clamp(6px, 2vw, 8px) clamp(12px, 3.5vw, 15px);
-    font-size: clamp(0.8rem, 3vw, 0.9rem);
-  }
+:root {
+  --bg-content: #f5f5f5;
+  --bg-form: #fff;
+  --text-color: #333;
+  --text-secondary: #666;
+  --border-color: #ddd;
+  --input-bg: rgba(255, 255, 255, 0.8);
 }
 
-@media screen and (max-width: 480px) {
-  .auth-form {
-    width: clamp(200px, 85%, 300px);
-    padding: clamp(15px, 4vw, 20px);
-  }
-
-  .auth-form h2 {
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
-  }
-
-  .auth-form input {
-    padding: clamp(8px, 2vw, 10px);
-    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
-  }
-
-  .auth-form button {
-    padding: clamp(8px, 2vw, 10px);
-    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
-  }
-
-  .navbar {
-    padding: 8px 10px;
-    min-height: 45px;
-  }
-
-  .navbar-title {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-  }
-
-  .mode-btn {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-  }
-
-  .profile-img {
-    width: clamp(20px, 6vw, 25px);
-    height: clamp(20px, 6vw, 25px);
-  }
-
-  .category-card {
-    min-width: clamp(90px, 30vw, 120px);
-    height: clamp(130px, 40vw, 150px);
-  }
-
-  .category-icon {
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-  }
-
-  .category-name {
-    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
-  }
-
-  .content-item {
-    padding: clamp(6px, 2vw, 10px);
-  }
-
-  .content-item h3 {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-  }
-
-  .content-item h4 {
-    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
-  }
-
-  .content-image {
-    max-height: clamp(60px, 15vw, 80px);
-  }
-
-  .upload-container-large {
-    width: clamp(200px, 80%, 400px);
-  }
-
-  .profile-screen {
-    width: clamp(200px, 80%, 400px);
-  }
-
-  .profile-details img {
-    width: clamp(60px, 15vw, 80px);
-    height: clamp(60px, 15vw, 80px);
-  }
-
-  .edit-profile-btn {
-    padding: clamp(4px, 1vw, 5px) clamp(6px, 2vw, 8px);
-    font-size: clamp(0.6rem, 2vw, 0.7rem);
-    width: clamp(80px, 16vw, 100px);
-  }
-
-  .profile-update-form .button-group button {
-    padding: clamp(5px, 1.5vw, 6px);
-    font-size: clamp(0.7rem, 2.5vw, 0.8rem);
-  }
-
-  .pagination-btn {
-    padding: clamp(5px, 1.5vw, 6px) clamp(10px, 3vw, 12px);
-    font-size: clamp(0.7rem, 2.5vw, 0.8rem);
-  }
+body.dark {
+  --bg-content: #1a1a1a;
+  --bg-form: #2c2c2c;
+  --text-color: #fff;
+  --text-secondary: #ccc;
+  --border-color: #444;
+  --input-bg: rgba(44, 44, 44, 0.8);
 }
