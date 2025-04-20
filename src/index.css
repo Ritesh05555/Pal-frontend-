@@ -1084,13 +1084,12 @@ body.dark {
   .category-carousel {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Reduced gap for better fit */
-    padding: 5px; /* Reduced padding to prevent cutoff */
-    width: 100%; /* Full width to adapt to screen */
-    max-width: 100%; /* Removed fixed max-width to adapt dynamically */
-    margin: 0 auto; /* Center the grid */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    box-sizing: border-box; /* Include padding in width */
+    gap: 10px;
+    padding: 5px 20px; /* Increased left and right padding to 20px for more space */
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   .category-card {
@@ -1107,7 +1106,7 @@ body.dark {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 10px;
+    padding: 10px 30px; /* Increased left and right padding to 30px for more space */
     width: 90%;
     max-width: 700px;
     margin: 0 auto;
@@ -1121,7 +1120,7 @@ body.dark {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 15px 0;
+    padding: 15px 40px; /* Increased left and right padding to 40px for more space */
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
