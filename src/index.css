@@ -1065,7 +1065,7 @@ body.dark {
   --input-bg: rgba(44, 44, 44, 0.8);
 }
 
-/* Media Query for Phone Screens */
+/* Media Query for Phone Screens and Adjustments */
 @media (max-width: 768px) {
   .navbar {
     justify-content: center; /* Center "AAPKA PAL" on phone screens */
@@ -1084,12 +1084,13 @@ body.dark {
   .category-carousel {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 10px;
-    width: 90%;
-    max-width: 400px; /* Increased to accommodate larger cards */
-    margin: 0 auto;
-    overflow-x: hidden;
+    gap: 10px; /* Reduced gap for better fit */
+    padding: 5px; /* Reduced padding to prevent cutoff */
+    width: 100%; /* Full width to adapt to screen */
+    max-width: 100%; /* Removed fixed max-width to adapt dynamically */
+    margin: 0 auto; /* Center the grid */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box; /* Include padding in width */
   }
 
   .category-card {
@@ -1097,5 +1098,33 @@ body.dark {
     height: clamp(180px, 50vw, 220px);
     padding: 10px;
     box-sizing: border-box;
+  }
+}
+
+/* Additional Adjustments for Various Screen Sizes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 1025px) {
+  .category-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: hidden;
   }
 }
