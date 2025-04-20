@@ -310,8 +310,8 @@ body.dark .navbar-title {
 }
 
 .category-card {
-  min-width: clamp(120px, 40vw, 180px);
-  height: clamp(180px, 50vw, 220px);
+  min-width: clamp(130px, 42vw, 190px); /* Slightly increased from 120px to 130px and 180px to 190px */
+  height: clamp(190px, 52vw, 230px); /* Slightly increased from 180px to 190px and 220px to 230px */
   background: #4ecdc4;
   border-radius: 15px;
   display: flex;
@@ -532,7 +532,8 @@ body.dark .navbar-title {
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;
-  object-fit: cover;
+  object-fit: cover; /* Ensured object-fit is cover to prevent white space */
+  display: block; /* Removed any inline spacing issues */
 }
 
 .content-footer {
@@ -1068,7 +1069,7 @@ body.dark {
 /* Media Query for Phone Screens and Adjustments */
 @media (max-width: 768px) {
   .navbar {
-    justify-content: center; /* Center "AAPKA PAL" on phone screens */
+    justify-content: center;
   }
 
   .mode-btn {
@@ -1085,7 +1086,7 @@ body.dark {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 5px 20px; /* Increased left and right padding to 20px for more space */
+    padding: 5px 20px;
     width: 100%;
     margin: 0 auto;
     overflow-x: hidden;
@@ -1093,8 +1094,8 @@ body.dark {
   }
 
   .category-card {
-    min-width: clamp(120px, 40vw, 180px);
-    height: clamp(180px, 50vw, 220px);
+    min-width: clamp(130px, 42vw, 190px);
+    height: clamp(190px, 52vw, 230px);
     padding: 10px;
     box-sizing: border-box;
   }
@@ -1106,11 +1107,18 @@ body.dark {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 10px 30px; /* Increased left and right padding to 30px for more space */
+    padding: 10px 30px;
     width: 90%;
     max-width: 700px;
     margin: 0 auto;
     overflow-x: hidden;
+  }
+
+  .category-card {
+    min-width: clamp(130px, 42vw, 190px);
+    height: clamp(190px, 52vw, 230px);
+    padding: 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -1120,10 +1128,17 @@ body.dark {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 15px 40px; /* Increased left and right padding to 40px for more space */
+    padding: 15px 40px;
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
     overflow-x: hidden;
+  }
+
+  .category-card {
+    min-width: clamp(130px, 42vw, 190px);
+    height: clamp(190px, 52vw, 230px);
+    padding: 10px;
+    box-sizing: border-box;
   }
 }
