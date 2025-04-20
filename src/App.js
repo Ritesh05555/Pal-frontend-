@@ -67,7 +67,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password });
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password });
 //       setToken(response.data.token);
 //       onLogin(response.data.token);
 //     } catch (err) {
@@ -119,7 +119,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created! Please login.');
@@ -206,7 +206,7 @@
 //       const token = getToken();
 //       if (token) {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //             headers: { Authorization: `Bearer ${token}` },
 //           });
 //           setUser(response.data.user);
@@ -239,7 +239,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content');
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content');
 //         setContents(response.data);
 //       } catch (err) {
 //         console.error('Fetch contents error:', err.response ? err.response.data : err.message);
@@ -377,7 +377,7 @@
 //       setIsAuthenticated(true);
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //             headers: { Authorization: `Bearer ${token}` },
 //           });
 //           setUser(response.data.user);
@@ -402,7 +402,7 @@
 //     setIsAuthenticated(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //           headers: { Authorization: `Bearer ${token}` },
 //         });
 //         setUser(response.data.user);
@@ -493,7 +493,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -550,7 +550,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, login again');
@@ -606,7 +606,7 @@
 //       <h1 className="navbar-title">APKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" style={{ position: 'absolute', top: '10px', right: '20px' }} />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" style={{ position: 'absolute', top: '10px', right: '20px' }} />
 //         </div>
 //       )}
 //     </nav>
@@ -667,7 +667,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -680,10 +680,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -698,7 +698,7 @@
 //         <div key={content._id} className="content-item">
 //           <h3>{content.title || 'Untitled'} by {content.user.name}</h3>
 //           <p>{content.body.substring(0, 100)}...</p>
-//           {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//           {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //           <span>{new Date(content.createdAt).toLocaleString()}</span>
 //           <button onClick={() => handleLike(content._id)}>
 //             <FontAwesomeIcon icon="heart" /> {content.likes.length}
@@ -733,7 +733,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -773,7 +773,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -843,7 +843,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -855,7 +855,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         const contents = response.data;
@@ -872,7 +872,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -908,12 +908,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         const contents = response.data;
@@ -957,7 +957,7 @@
 //             </button>
 //           </div>
 //           <div className="profile-details">
-//             <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//             <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
 //             <p>Joined: {new Date(user.createdAt).toLocaleString()}</p>
@@ -978,7 +978,7 @@
 //                   <div key={content._id} className="content-item">
 //                     <h4>{content.title || 'Untitled'}</h4>
 //                     <p>{content.body.substring(0, 100)}...</p>
-//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //                     <button onClick={() => handleDelete(content._id, false)}><FontAwesomeIcon icon="trash" /></button>
 //                   </div>
 //                 ))
@@ -1000,7 +1000,7 @@
 //                   <div key={content._id} className="content-item">
 //                     <h4>{content.title || 'Untitled'}</h4>
 //                     <p>{content.body.substring(0, 100)}...</p>
-//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //                     <button onClick={() => handleDelete(content._id, true)}><FontAwesomeIcon icon="trash" /></button>
 //                     <button onClick={() => handleEdit(content)}><FontAwesomeIcon icon="edit" /></button>
 //                   </div>
@@ -1063,7 +1063,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -1164,7 +1164,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -1224,7 +1224,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, login again');
@@ -1274,7 +1274,7 @@
 //       <h1 className="navbar-title">APKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -1343,7 +1343,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -1356,10 +1356,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -1374,7 +1374,7 @@
 //         <div key={content._id} className="content-item">
 //           <h3>{content.title || 'Untitled'} by {content.user.name}</h3>
 //           <p>{content.body.substring(0, 100)}...</p>
-//           {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//           {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //           <span>{new Date(content.createdAt).toLocaleString()}</span>
 //           <button onClick={() => handleLike(content._id)}>
 //             <FontAwesomeIcon icon="heart" /> {content.likes.length}
@@ -1409,7 +1409,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -1449,7 +1449,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -1521,7 +1521,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -1533,7 +1533,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         const contents = response.data;
@@ -1550,7 +1550,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -1586,12 +1586,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         const contents = response.data;
@@ -1635,7 +1635,7 @@
 //             </button>
 //           </div>
 //           <div className="profile-details">
-//             <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//             <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
 //             <p>Joined: {new Date(user.createdAt).toLocaleString()}</p>
@@ -1656,7 +1656,7 @@
 //                   <div key={content._id} className="content-item">
 //                     <h4>{content.title || 'Untitled'}</h4>
 //                     <p>{content.body.substring(0, 100)}...</p>
-//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //                     <button onClick={() => handleDelete(content._id, false)}><FontAwesomeIcon icon="trash" /></button>
 //                   </div>
 //                 ))
@@ -1678,7 +1678,7 @@
 //                   <div key={content._id} className="content-item">
 //                     <h4>{content.title || 'Untitled'}</h4>
 //                     <p>{content.body.substring(0, 100)}...</p>
-//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//                     {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //                     <button onClick={() => handleDelete(content._id, true)}><FontAwesomeIcon icon="trash" /></button>
 //                     <button onClick={() => handleEdit(content)}><FontAwesomeIcon icon="edit" /></button>
 //                   </div>
@@ -1741,7 +1741,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -1845,7 +1845,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -1905,7 +1905,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -1950,7 +1950,7 @@
 //       <h1 className="navbar-title">APKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -2020,7 +2020,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -2034,10 +2034,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -2071,7 +2071,7 @@
 //                   {expandedContent === content._id ? 'Show Less' : 'Read More'}
 //                 </button>
 //               )}
-//               {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//               {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //               <div className="content-footer">
 //                 <span>{new Date(content.createdAt).toLocaleString()}</span>
 //                 <button onClick={() => handleLike(content._id)}>
@@ -2112,7 +2112,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -2152,7 +2152,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -2241,7 +2241,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -2253,7 +2253,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         const contents = response.data;
@@ -2270,7 +2270,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -2306,12 +2306,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         const contents = response.data;
@@ -2362,7 +2362,7 @@
 //             </button>
 //           </div>
 //           <div className="profile-details">
-//             <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//             <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
 //           </div>
@@ -2393,7 +2393,7 @@
 //                           {expandedContent === content._id ? 'Show Less' : 'Read More'}
 //                         </button>
 //                       )}
-//                       {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//                       {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //                       <div className="content-footer">
 //                         <span>{new Date(content.createdAt).toLocaleString()}</span>
 //                         <button onClick={() => handleDelete(content._id, false)}><FontAwesomeIcon icon="trash" /></button>
@@ -2430,7 +2430,7 @@
 //                           {expandedContent === content._id ? 'Show Less' : 'Read More'}
 //                         </button>
 //                       )}
-//                       {content.image && <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Content" className="content-image" />}
+//                       {content.image && <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Content" className="content-image" />}
 //                       <div className="content-footer">
 //                         <span>{new Date(content.createdAt).toLocaleString()}</span>
 //                         <button onClick={() => handleDelete(content._id, true)}><FontAwesomeIcon icon="trash" /></button>
@@ -2501,7 +2501,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/user/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/user/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -2615,7 +2615,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -2675,7 +2675,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -2720,7 +2720,7 @@
 //       <h1 className="navbar-title">APKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -2791,7 +2791,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -2805,10 +2805,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -2823,7 +2823,7 @@
 
 //   const refreshContent = async () => {
 //     try {
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -2858,7 +2858,7 @@
 //               )}
 //               {content.image && (
 //                 <img
-//                   src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                   src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                   alt="Content"
 //                   className="content-image"
 //                   onClick={() => setShowImageModal(content._id)}
@@ -2876,7 +2876,7 @@
 //                     <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                       <FontAwesomeIcon icon="times" />
 //                     </button>
-//                     <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                     <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                   </div>
 //                 </div>
 //               )}
@@ -2914,7 +2914,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -2955,7 +2955,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -3044,7 +3044,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -3056,7 +3056,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -3072,7 +3072,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -3108,12 +3108,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -3164,7 +3164,7 @@
 //           <div className="profile-details">
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
-//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com ${user.profilePic}`} alt="Profile" className="profile-img" />}
+//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com${user.profilePic}`} alt="Profile" className="profile-img" />}
 //           </div>
 //           <div className="content-sections">
 //             <h3>Uploaded Contents</h3>
@@ -3197,7 +3197,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setExpandedContent(content._id)}
@@ -3213,7 +3213,7 @@
 //                             <button className="close-modal-btn" onClick={() => setExpandedContent(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -3253,7 +3253,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setExpandedContent(content._id)}
@@ -3270,7 +3270,7 @@
 //                             <button className="close-modal-btn" onClick={() => setExpandedContent(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -3339,7 +3339,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -3450,7 +3450,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -3510,7 +3510,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -3555,7 +3555,7 @@
 //       <h1 className="navbar-title">AAPKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -3635,7 +3635,7 @@
 // //   useEffect(() => {
 // //     const fetchContents = async () => {
 // //       try {
-// //         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+// //         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 // //           headers: { Authorization: `Bearer ${getToken()}` },
 // //         });
 // //         setContents(response.data);
@@ -3649,10 +3649,10 @@
 
 // //   const handleLike = async (contentId) => {
 // //     try {
-// //       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+// //       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 // //         headers: { Authorization: `Bearer ${getToken()}` },
 // //       });
-// //       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+// //       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 // //         headers: { Authorization: `Bearer ${getToken()}` },
 // //       });
 // //       setContents(response.data);
@@ -3667,7 +3667,7 @@
 
 // //   const refreshContent = async () => {
 // //     try {
-// //       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+// //       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 // //         headers: { Authorization: `Bearer ${getToken()}` },
 // //       });
 // //       setContents(response.data);
@@ -3701,7 +3701,7 @@
 // //               )}
 // //               {content.image && (
 // //                 <img
-// //                   src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+// //                   src={` https://pal-backend-tooi.onrender.com${content.image}`}
 // //                   alt="Content"
 // //                   className="content-image"
 // //                   onClick={() => setShowImageModal(content._id)}
@@ -3719,7 +3719,7 @@
 // //                     <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 // //                       <FontAwesomeIcon icon="times" />
 // //                     </button>
-// //                     <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+// //                     <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 // //                   </div>
 // //                 </div>
 // //               )}
@@ -3747,7 +3747,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -3761,10 +3761,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -3779,7 +3779,7 @@
 
 //   const refreshContent = async () => {
 //     try {
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -3813,7 +3813,7 @@
 //               )}
 //               {content.image && (
 //                 <img
-//                   src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                   src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                   alt="Content"
 //                   className="content-image"
 //                   onClick={() => setShowImageModal(content._id)} // Open modal on click
@@ -3831,7 +3831,7 @@
 //                     <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                       <FontAwesomeIcon icon="times" />
 //                     </button>
-//                     <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                     <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                   </div>
 //                 </div>
 //               )}
@@ -3869,7 +3869,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -3910,7 +3910,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -3999,7 +3999,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -4011,7 +4011,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -4027,7 +4027,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -4063,12 +4063,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -4119,7 +4119,7 @@
 //           <div className="profile-details">
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
-//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com ${user.profilePic}`} alt="Profile" className="profile-img" />}
+//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com${user.profilePic}`} alt="Profile" className="profile-img" />}
 //           </div>
 //           <div className="content-sections">
 //             <h3>Uploaded Contents</h3>
@@ -4152,7 +4152,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setExpandedContent(content._id)}
@@ -4168,7 +4168,7 @@
 //                             <button className="close-modal-btn" onClick={() => setExpandedContent(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -4208,7 +4208,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setExpandedContent(content._id)}
@@ -4225,7 +4225,7 @@
 //                             <button className="close-modal-btn" onClick={() => setExpandedContent(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -4294,7 +4294,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -4409,7 +4409,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -4471,7 +4471,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -4516,7 +4516,7 @@
 //       <h1 className="navbar-title">AAPKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -4596,7 +4596,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -4610,10 +4610,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data.map(content => {
@@ -4637,7 +4637,7 @@
 
 //   const refreshContent = async () => {
 //     try {
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -4672,7 +4672,7 @@
 //               )}
 //               {content.image && (
 //                 <img
-//                   src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                   src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                   alt="Content"
 //                   className="content-image"
 //                   onClick={() => setShowImageModal(content._id)}
@@ -4690,7 +4690,7 @@
 //                     <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                       <FontAwesomeIcon icon="times" />
 //                     </button>
-//                     <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                     <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                   </div>
 //                 </div>
 //               )}
@@ -4728,7 +4728,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -4769,7 +4769,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -4859,7 +4859,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -4871,7 +4871,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -4887,7 +4887,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -4923,12 +4923,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -4962,12 +4962,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -5020,7 +5020,7 @@
 //           <div className="profile-details">
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
-//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com ${user.profilePic}`} alt="Profile" className="profile-img" />}
+//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com${user.profilePic}`} alt="Profile" className="profile-img" />}
 //           </div>
 //           <div className="content-sections">
 //             <h3>Uploaded Contents</h3>
@@ -5054,7 +5054,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -5070,7 +5070,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -5111,7 +5111,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -5128,7 +5128,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -5199,7 +5199,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -5333,7 +5333,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -5396,7 +5396,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -5441,7 +5441,7 @@
 //       <h1 className="navbar-title">AAPKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -5521,7 +5521,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -5535,10 +5535,10 @@
 
 //   const handleLike = async (contentId) => {
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data.map(content => {
@@ -5562,7 +5562,7 @@
 
 //   const refreshContent = async () => {
 //     try {
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -5597,7 +5597,7 @@
 //               )}
 //               {content.image && (
 //                 <img
-//                   src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                   src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                   alt="Content"
 //                   className="content-image"
 //                   onClick={() => setShowImageModal(content._id)}
@@ -5615,7 +5615,7 @@
 //                     <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                       <FontAwesomeIcon icon="times" />
 //                     </button>
-//                     <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                     <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                   </div>
 //                 </div>
 //               )}
@@ -5653,7 +5653,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -5694,7 +5694,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -5784,7 +5784,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -5796,7 +5796,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -5812,7 +5812,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -5848,12 +5848,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -5887,12 +5887,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -5945,7 +5945,7 @@
 //           <div className="profile-details">
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
-//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com ${user.profilePic}`} alt="Profile" className="profile-img" />}
+//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com${user.profilePic}`} alt="Profile" className="profile-img" />}
 //           </div>
 //           <div className="content-sections">
 //             <h3>Uploaded Contents</h3>
@@ -5979,7 +5979,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -5995,7 +5995,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -6036,7 +6036,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -6053,7 +6053,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -6124,7 +6124,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -6263,7 +6263,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -6326,7 +6326,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -6371,7 +6371,7 @@
 //       <h1 className="navbar-title">AAPKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? ` https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -6453,7 +6453,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -6483,11 +6483,11 @@
 
 //     // Perform API call
 //     try {
-//       await axios.post(` https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(` https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       // Fetch updated contents to ensure consistency
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -6508,7 +6508,7 @@
 
 //   const refreshContent = async () => {
 //     try {
-//       const response = await axios.get(` https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(` https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -6562,7 +6562,7 @@
 //                 )}
 //                 {content.image && (
 //                   <img
-//                     src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                     src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                     alt="Content"
 //                     className="content-image"
 //                     onClick={() => setShowImageModal(content._id)}
@@ -6580,7 +6580,7 @@
 //                       <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                         <FontAwesomeIcon icon="times" />
 //                       </button>
-//                       <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                       <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                     </div>
 //                   </div>
 //                 )}
@@ -6633,7 +6633,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -6674,7 +6674,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post(' https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post(' https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -6764,7 +6764,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -6776,7 +6776,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -6792,7 +6792,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(` https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(` https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -6828,12 +6828,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -6867,12 +6867,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(` https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(` https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -6925,7 +6925,7 @@
 //           <div className="profile-details">
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
-//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com ${user.profilePic}`} alt="Profile" className="profile-img" />}
+//             {user.profilePic && <img src={` https://pal-backend-tooi.onrender.com${user.profilePic}`} alt="Profile" className="profile-img" />}
 //           </div>
 //           <div className="content-sections">
 //             <h3>Uploaded Contents</h3>
@@ -6959,7 +6959,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -6975,7 +6975,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -7016,7 +7016,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={` https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={` https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -7033,7 +7033,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={` https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={` https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -7104,7 +7104,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get(' https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get(' https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -7240,7 +7240,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -7303,7 +7303,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -7348,7 +7348,7 @@
 //       <h1 className="navbar-title">AAPKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : '/default-avatar.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -7430,7 +7430,7 @@
 //   useEffect(() => {
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -7460,11 +7460,11 @@
 
 //     // Perform API call
 //     try {
-//       await axios.post(`https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(`https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       // Fetch updated contents to ensure consistency
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -7485,7 +7485,7 @@
 
 //   const refreshContent = async () => {
 //     try {
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -7539,7 +7539,7 @@
 //                 )}
 //                 {content.image && (
 //                   <img
-//                     src={`https://pal-backend-tooi.onrender.com ${content.image}`}
+//                     src={`https://pal-backend-tooi.onrender.com${content.image}`}
 //                     alt="Content"
 //                     className="content-image"
 //                     onClick={() => setShowImageModal(content._id)}
@@ -7557,7 +7557,7 @@
 //                       <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                         <FontAwesomeIcon icon="times" />
 //                       </button>
-//                       <img src={`https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                       <img src={`https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                     </div>
 //                   </div>
 //                 )}
@@ -7610,7 +7610,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -7651,7 +7651,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -7741,7 +7741,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -7753,7 +7753,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -7769,7 +7769,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(`https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(`https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -7805,12 +7805,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -7844,12 +7844,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -7902,7 +7902,7 @@
 //           <div className="profile-details">
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
-//             {user.profilePic && <img src={`https://pal-backend-tooi.onrender.com ${user.profilePic}`} alt="Profile" className="profile-img" />}
+//             {user.profilePic && <img src={`https://pal-backend-tooi.onrender.com${user.profilePic}`} alt="Profile" className="profile-img" />}
 //           </div>
 //           <div className="content-sections">
 //             <h3>Uploaded Contents</h3>
@@ -7936,7 +7936,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={`https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={`https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -7952,7 +7952,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={`https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={`https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -7993,7 +7993,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={`https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={`https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -8010,7 +8010,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={`https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={`https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -8081,7 +8081,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -8217,7 +8217,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -8280,7 +8280,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -8328,7 +8328,7 @@
 //       <h1 className="navbar-title">AAPKA PAL</h1>
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
-//           <img src={user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'} alt="Profile" className="profile-img" />
+//           <img src={user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'} alt="Profile" className="profile-img" />
 //         </div>
 //       )}
 //     </nav>
@@ -8413,7 +8413,7 @@
 //     setLoading(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -8425,7 +8425,7 @@
 
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setContents(response.data);
@@ -8456,10 +8456,10 @@
 //     ));
 
 //     try {
-//       await axios.post(`https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(`https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -8480,7 +8480,7 @@
 //   const refreshContent = async () => {
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -8538,7 +8538,7 @@
 //                 )}
 //                 {content.image && (
 //                   <img
-//                     src={`https://pal-backend-tooi.onrender.com ${content.image}`}
+//                     src={`https://pal-backend-tooi.onrender.com${content.image}`}
 //                     alt="Content"
 //                     className="content-image"
 //                     onClick={() => setShowImageModal(content._id)}
@@ -8556,7 +8556,7 @@
 //                       <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                         <FontAwesomeIcon icon="times" />
 //                       </button>
-//                       <img src={`https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                       <img src={`https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                     </div>
 //                   </div>
 //                 )}
@@ -8607,7 +8607,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -8648,7 +8648,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -8740,7 +8740,7 @@
 //     setLoading(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUser(response.data.user);
@@ -8754,7 +8754,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -8770,7 +8770,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(`https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(`https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -8806,12 +8806,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -8845,12 +8845,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -8904,7 +8904,7 @@
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
 //             <img
-//               src={user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+//               src={user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
 //               alt="Profile"
 //               className="profile-img"
 //             />
@@ -8942,7 +8942,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={`https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={`https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -8958,7 +8958,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={`https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={`https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -9000,7 +9000,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={`https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={`https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -9017,7 +9017,7 @@
 //                             <button className="close-modal-btn" onClick={() => setShowImageModal(null)}>
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
-//                             <img src={`https://pal-backend-tooi.onrender.com ${content.image}`} alt="Enlarged Content" className="enlarged-image" />
+//                             <img src={`https://pal-backend-tooi.onrender.com${content.image}`} alt="Enlarged Content" className="enlarged-image" />
 //                           </div>
 //                         </div>
 //                       )}
@@ -9086,7 +9086,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           setUser(response.data.user);
@@ -9220,7 +9220,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -9283,7 +9283,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -9332,7 +9332,7 @@
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
 //           <img
-//             src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+//             src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
 //             alt="Profile"
 //             className="profile-img"
 //             onError={(e) => console.log('Profile image load error in Navbar:', e.target.src, e)}
@@ -9421,7 +9421,7 @@
 //     setLoading(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         console.log('Fetched user data:', response.data.user); // Debug log for profile
@@ -9434,7 +9434,7 @@
 
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         console.log('Fetched contents:', response.data); // Debug log for content
@@ -9466,10 +9466,10 @@
 //     ));
 
 //     try {
-//       await axios.post(`https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(`https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -9490,7 +9490,7 @@
 //   const refreshContent = async () => {
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -9548,7 +9548,7 @@
 //                 )}
 //                 {content.image && (
 //                   <img
-//                     src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`} // Fallback to local if not a URL
+//                     src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`} // Fallback to local if not a URL
 //                     alt="Content"
 //                     className="content-image"
 //                     onClick={() => setShowImageModal(content._id)}
@@ -9568,7 +9568,7 @@
 //                         <FontAwesomeIcon icon="times" />
 //                       </button>
 //                       <img
-//                         src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`} // Fallback to local if not a URL
+//                         src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`} // Fallback to local if not a URL
 //                         alt="Enlarged Content"
 //                         className="enlarged-image"
 //                         onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -9623,7 +9623,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -9664,7 +9664,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -9756,7 +9756,7 @@
 //     setLoading(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         console.log('Fetched user data:', response.data.user); // Debug log for profile
@@ -9771,7 +9771,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -9787,7 +9787,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(`https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(`https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -9823,12 +9823,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -9862,12 +9862,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -9921,7 +9921,7 @@
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
 //             <img
-//               src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+//               src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
 //               alt="Profile"
 //               className="profile-img"
 //               onError={(e) => console.log('Profile image load error in ProfilePage:', e.target.src, e)}
@@ -9960,7 +9960,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`} // Fallback to local if not a URL
+//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`} // Fallback to local if not a URL
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -9978,7 +9978,7 @@
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
 //                             <img
-//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`} // Fallback to local if not a URL
+//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`} // Fallback to local if not a URL
 //                               alt="Enlarged Content"
 //                               className="enlarged-image"
 //                               onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -10024,7 +10024,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`} // Fallback to local if not a URL
+//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`} // Fallback to local if not a URL
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -10043,7 +10043,7 @@
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
 //                             <img
-//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`} // Fallback to local if not a URL
+//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`} // Fallback to local if not a URL
 //                               alt="Enlarged Content"
 //                               className="enlarged-image"
 //                               onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -10116,7 +10116,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           console.log('Fetched user data:', response.data.user); // Debug log for profile
@@ -10252,7 +10252,7 @@
 //     setError('');
 //     setLoading(true);
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/login', { email, password }, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
 //         headers: { 'Content-Type': 'application/json' },
 //       });
 //       setToken(response.data.token);
@@ -10315,7 +10315,7 @@
 //     if (profilePic) formData.append('profilePic', profilePic);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/auth/signup', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' },
 //       });
 //       setSuccess('Account created, redirecting to login...');
@@ -10364,7 +10364,7 @@
 //       {user && (
 //         <div className="profile-section" onClick={() => navigate('/profile')}>
 //           <img
-//             src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+//             src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
 //             alt="Profile"
 //             className="profile-img"
 //             onError={(e) => console.log('Profile image load error in Navbar:', e.target.src, e)}
@@ -10453,7 +10453,7 @@
 //     setLoading(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         console.log('Fetched user data:', response.data.user);
@@ -10466,7 +10466,7 @@
 
 //     const fetchContents = async () => {
 //       try {
-//         const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//         const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         console.log('Fetched contents:', response.data);
@@ -10498,10 +10498,10 @@
 //     ));
 
 //     try {
-//       await axios.post(`https://pal-backend-tooi.onrender.com /api/content/${contentId}/like`, {}, {
+//       await axios.post(`https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -10522,7 +10522,7 @@
 //   const refreshContent = async () => {
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`https://pal-backend-tooi.onrender.com /api/content?type=${category}`, {
+//       const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       setContents(response.data);
@@ -10580,7 +10580,7 @@
 //                 )}
 //                 {content.image && (
 //                   <img
-//                     src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`}
+//                     src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
 //                     alt="Content"
 //                     className="content-image"
 //                     onClick={() => setShowImageModal(content._id)}
@@ -10600,7 +10600,7 @@
 //                         <FontAwesomeIcon icon="times" />
 //                       </button>
 //                       <img
-//                         src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`}
+//                         src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
 //                         alt="Enlarged Content"
 //                         className="enlarged-image"
 //                         onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -10655,7 +10655,7 @@
 //     formData.append('isDraft', false);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -10696,7 +10696,7 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       const response = await axios.post('https://pal-backend-tooi.onrender.com /api/content', formData, {
+//       const response = await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setTitle('');
@@ -10794,7 +10794,7 @@
 //     setLoading(true);
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         console.log('Fetched user data:', response.data.user);
@@ -10810,7 +10810,7 @@
 
 //     const fetchUserContents = async () => {
 //       try {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -10826,7 +10826,7 @@
 
 //   const handleDelete = async (id, isDraft) => {
 //     try {
-//       await axios.delete(`https://pal-backend-tooi.onrender.com /api/content/${id}`, {
+//       await axios.delete(`https://pal-backend-tooi.onrender.com/api/content/${id}`, {
 //         headers: { Authorization: `Bearer ${getToken()}` },
 //       });
 //       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -10862,12 +10862,12 @@
 //     formData.append('isDraft', true);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -10901,12 +10901,12 @@
 //     formData.append('type', editDraft.type);
 
 //     try {
-//       await axios.put(`https://pal-backend-tooi.onrender.com /api/content/${editDraft._id}`, formData, {
+//       await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setEditDraft(null);
 //       const fetchUserContents = async () => {
-//         const response = await axios.get('https://pal-backend-tooi.onrender.com /api/content/user', {
+//         const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
 //           headers: { Authorization: `Bearer ${getToken()}` },
 //         });
 //         setDraftContents(response.data.filter(c => c.isDraft));
@@ -10958,7 +10958,7 @@
 //     submitButton.classList.add('updating');
 
 //     try {
-//       const response = await axios.put('https://pal-backend-tooi.onrender.com /api/user/profile', formData, {
+//       const response = await axios.put('https://pal-backend-tooi.onrender.com/api/user/profile', formData, {
 //         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
 //       });
 //       setUser(response.data.user);
@@ -10995,7 +10995,7 @@
 //             <h2>{user.name}</h2>
 //             <p>Email: {user.email}</p>
 //             <img
-//               src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com ${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+//               src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
 //               alt="Profile"
 //               className="profile-img"
 //               onError={(e) => console.log('Profile image load error in ProfilePage:', e.target.src, e)}
@@ -11057,7 +11057,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -11075,7 +11075,7 @@
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
 //                             <img
-//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`}
+//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
 //                               alt="Enlarged Content"
 //                               className="enlarged-image"
 //                               onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -11121,7 +11121,7 @@
 //                       )}
 //                       {content.image && (
 //                         <img
-//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`}
+//                           src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
 //                           alt="Content"
 //                           className="content-image"
 //                           onClick={() => setShowImageModal(content._id)}
@@ -11140,7 +11140,7 @@
 //                               <FontAwesomeIcon icon="times" />
 //                             </button>
 //                             <img
-//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com ${content.image}`}
+//                               src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
 //                               alt="Enlarged Content"
 //                               className="enlarged-image"
 //                               onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -11213,7 +11213,7 @@
 //     if (isAuthenticated) {
 //       const fetchUser = async () => {
 //         try {
-//           const response = await axios.get('https://pal-backend-tooi.onrender.com /api/auth/profile', {
+//           const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
 //             headers: { Authorization: `Bearer ${getToken()}` },
 //           });
 //           console.log('Fetched user data:', response.data.user);
@@ -11348,7 +11348,7 @@ function Login({ onLogin }) {
     setError('');
     setLoading(true);
     try {
-      const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/login', { email, password }, {
+      const response = await axios.post('http://localhost:3000/api/auth/login', { email, password }, {
         headers: { 'Content-Type': 'application/json' },
       });
       setToken(response.data.token);
@@ -11411,7 +11411,7 @@ function Signup({ onLogin }) {
     if (profilePic) formData.append('profilePic', profilePic);
 
     try {
-      const response = await axios.post('https://pal-backend-tooi.onrender.com/api/auth/signup', formData, {
+      const response = await axios.post('http://localhost:3000/api/auth/signup', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setSuccess('Account created, redirecting to login...');
@@ -11460,7 +11460,7 @@ function Navbar({ onLogout, isDarkMode, setIsDarkMode, user, navigate }) {
       {user && (
         <div className="profile-section" onClick={() => navigate('/profile')}>
           <img
-            src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+            src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `http://localhost:3000${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
             alt="Profile"
             className="profile-img"
             onError={(e) => console.log('Profile image load error in Navbar:', e.target.src, e)}
@@ -11553,7 +11553,7 @@ function ContentFeed({ category }) {
     setLoading(true);
     const fetchUser = async () => {
       try {
-        const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
+        const response = await axios.get('http://localhost:3000/api/auth/profile', {
           headers: { Authorization: `Bearer ${getToken()}` },
         });
         setUser(response.data.user);
@@ -11565,7 +11565,7 @@ function ContentFeed({ category }) {
 
     const fetchContents = async () => {
       try {
-        const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}${selectedMood !== 'all' ? `&mood=${selectedMood}` : ''}`, {
+        const response = await axios.get(`http://localhost:3000/api/content?type=${category}${selectedMood !== 'all' ? `&mood=${selectedMood}` : ''}`, {
           headers: { Authorization: `Bearer ${getToken()}` },
         });
         // Ensure only content matching the selected mood is set
@@ -11600,10 +11600,10 @@ function ContentFeed({ category }) {
     ));
 
     try {
-      await axios.post(`https://pal-backend-tooi.onrender.com/api/content/${contentId}/like`, {}, {
+      await axios.post(`http://localhost:3000/api/content/${contentId}/like`, {}, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
-      const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}${selectedMood !== 'all' ? `&mood=${selectedMood}` : ''}`, {
+      const response = await axios.get(`http://localhost:3000/api/content?type=${category}${selectedMood !== 'all' ? `&mood=${selectedMood}` : ''}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       const filteredContents = selectedMood === 'all' 
@@ -11627,7 +11627,7 @@ function ContentFeed({ category }) {
   const refreshContent = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://pal-backend-tooi.onrender.com/api/content?type=${category}${selectedMood !== 'all' ? `&mood=${selectedMood}` : ''}`, {
+      const response = await axios.get(`http://localhost:3000/api/content?type=${category}${selectedMood !== 'all' ? `&mood=${selectedMood}` : ''}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       const filteredContents = selectedMood === 'all' 
@@ -11716,7 +11716,7 @@ function ContentFeed({ category }) {
                 )}
                 {content.image && (
                   <img
-                    src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
+                    src={content.image.startsWith('http') ? content.image : `http://localhost:3000${content.image}`}
                     alt="Content"
                     className="content-image"
                     onClick={() => setShowImageModal(content._id)}
@@ -11736,7 +11736,7 @@ function ContentFeed({ category }) {
                         <FontAwesomeIcon icon="times" />
                       </button>
                       <img
-                        src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
+                        src={content.image.startsWith('http') ? content.image : `http://localhost:3000${content.image}`}
                         alt="Enlarged Content"
                         className="enlarged-image"
                         onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -11791,7 +11791,7 @@ function UploadContainer({ category, onClose, onUploadSuccess }) {
     formData.append('isDraft', false);
 
     try {
-      await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
+      await axios.post('http://localhost:3000/api/content', formData, {
         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
       });
       setTitle('');
@@ -11832,7 +11832,7 @@ function UploadContainer({ category, onClose, onUploadSuccess }) {
     formData.append('isDraft', true);
 
     try {
-      await axios.post('https://pal-backend-tooi.onrender.com/api/content', formData, {
+      await axios.post('http://localhost:3000/api/content', formData, {
         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
       });
       setTitle('');
@@ -11930,7 +11930,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
     setLoading(true);
     const fetchUser = async () => {
       try {
-        const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
+        const response = await axios.get('http://localhost:3000/api/auth/profile', {
           headers: { Authorization: `Bearer ${getToken()}` },
         });
         setUser(response.data.user);
@@ -11945,7 +11945,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
 
     const fetchUserContents = async () => {
       try {
-        const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
+        const response = await axios.get('http://localhost:3000/api/content/user', {
           headers: { Authorization: `Bearer ${getToken()}` },
         });
         setUploadedContents(response.data.filter(c => !c.isDraft));
@@ -11961,7 +11961,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
 
   const handleDelete = async (id, isDraft) => {
     try {
-      await axios.delete(`https://pal-backend-tooi.onrender.com/api/content/${id}`, {
+      await axios.delete(`http://localhost:3000/api/content/${id}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       if (isDraft) setDraftContents(draftContents.filter(c => c._id !== id));
@@ -11997,12 +11997,12 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
     formData.append('isDraft', true);
 
     try {
-      await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
+      await axios.put(`http://localhost:3000/api/content/${editDraft._id}`, formData, {
         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
       });
       setEditDraft(null);
       const fetchUserContents = async () => {
-        const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
+        const response = await axios.get('http://localhost:3000/api/content/user', {
           headers: { Authorization: `Bearer ${getToken()}` },
         });
         setDraftContents(response.data.filter(c => c.isDraft));
@@ -12036,12 +12036,12 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
     formData.append('type', editDraft.type);
 
     try {
-      await axios.put(`https://pal-backend-tooi.onrender.com/api/content/${editDraft._id}`, formData, {
+      await axios.put(`http://localhost:3000/api/content/${editDraft._id}`, formData, {
         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
       });
       setEditDraft(null);
       const fetchUserContents = async () => {
-        const response = await axios.get('https://pal-backend-tooi.onrender.com/api/content/user', {
+        const response = await axios.get('http://localhost:3000/api/content/user', {
           headers: { Authorization: `Bearer ${getToken()}` },
         });
         setDraftContents(response.data.filter(c => c.isDraft));
@@ -12093,7 +12093,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
     submitButton.classList.add('updating');
 
     try {
-      const response = await axios.put('https://pal-backend-tooi.onrender.com/api/user/profile', formData, {
+      const response = await axios.put('http://localhost:3000/api/user/profile', formData, {
         headers: { Authorization: `Bearer ${getToken()}`, 'Content-Type': 'multipart/form-data' },
       });
       setUser(response.data.user);
@@ -12130,7 +12130,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
             <h2>{user.name}</h2>
             <p>Email: {user.email}</p>
             <img
-              src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `https://pal-backend-tooi.onrender.com${user.profilePic}` : 'https://pal-backend-tooi.onrender.com /byde.png'}
+              src={user.profilePic?.startsWith('http') ? user.profilePic : user.profilePic ? `http://localhost:3000${user.profilePic}` : 'https://pal-backend-tooi.onrender.com/byde.png'}
               alt="Profile"
               className="profile-img"
               onError={(e) => console.log('Profile image load error in ProfilePage:', e.target.src, e)}
@@ -12192,7 +12192,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
                       )}
                       {content.image && (
                         <img
-                          src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
+                          src={content.image.startsWith('http') ? content.image : `http://localhost:3000${content.image}`}
                           alt="Content"
                           className="content-image"
                           onClick={() => setShowImageModal(content._id)}
@@ -12210,7 +12210,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
                               <FontAwesomeIcon icon="times" />
                             </button>
                             <img
-                              src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
+                              src={content.image.startsWith('http') ? content.image : `http://localhost:3000${content.image}`}
                               alt="Enlarged Content"
                               className="enlarged-image"
                               onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -12256,7 +12256,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
                       )}
                       {content.image && (
                         <img
-                          src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
+                          src={content.image.startsWith('http') ? content.image : `http://localhost:3000${content.image}`}
                           alt="Content"
                           className="content-image"
                           onClick={() => setShowImageModal(content._id)}
@@ -12275,7 +12275,7 @@ function ProfilePage({ setIsAuthenticated, selectedCategory }) {
                               <FontAwesomeIcon icon="times" />
                             </button>
                             <img
-                              src={content.image.startsWith('http') ? content.image : `https://pal-backend-tooi.onrender.com${content.image}`}
+                              src={content.image.startsWith('http') ? content.image : `http://localhost:3000${content.image}`}
                               alt="Enlarged Content"
                               className="enlarged-image"
                               onError={(e) => console.log('Modal image load error:', e.target.src, e)}
@@ -12348,7 +12348,7 @@ function AppContent({ isAuthenticated, setIsAuthenticated, showSplash, setShowSp
     if (isAuthenticated) {
       const fetchUser = async () => {
         try {
-          const response = await axios.get('https://pal-backend-tooi.onrender.com/api/auth/profile', {
+          const response = await axios.get('http://localhost:3000/api/auth/profile', {
             headers: { Authorization: `Bearer ${getToken()}` },
           });
           setUser(response.data.user);
